@@ -8,7 +8,8 @@ import re
 
 # This example shows how to follow the Next page link
 
-url = 'http://recognition.ncqa.org/PSearchResults.aspx?state=NY&rp='
+url = 'http://www.ddglobal.com/default.aspx?page=category%20search%20results&catlist=129&tree=25*Classical%2fFractional+V-belts+(3L%2c+A%2f4L%2c+B%2f5L%2c+C%2c+D%2c+E)*0%40%4030*3L+Belts*129%40%40&Parent=30&SearchSource=Pagination&SearchType=AND&forcePrice=False&forceAvailability=False&OrderByColumn=&OrderByDirection=&SearchKey=SK45521PM&CurrentPage=&DropDownPageSize=100
+'
 br = mechanize.Browser()
 
     # sometimes the server is sensitive to this information
@@ -18,9 +19,9 @@ response = br.open(url)
 for pagenum in range(10):
     html = response.read()
     print "Page %d  page length %d" % (pagenum, len(html))
-    print "Clinicians found:", re.findall("PDetails.aspx\?ProviderId.*?>(.*?)</a>", html)
+    print "Clinicians found:", re.findall(default.aspx?page.*%20%)(.*%20%)</a>", html)
 
-    mnextlink = re.search("javascript:__doPostBack\('ProviderSearchResultsTable1\$NextLinkButton',''\).>Next Page", html) 
+    mnextlink = re.search("javascript:__doPostBack\('ItemSearchResults_Table\$ItemSearchResults_PrevNextLinksTD',''\).>Next Page", html) 
     if not mnextlink:
         break
 
